@@ -6,6 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+/* .orang-bg{
+  background-color: #FFBA33;
+}
+.sky-bg{
+  background-color: #7FB5FF;
+} */
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
