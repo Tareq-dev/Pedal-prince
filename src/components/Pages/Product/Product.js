@@ -2,9 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const {id, name, img, description, price, qty, supplier } = product;
+  const {_id, name, img, description, price, qty, supplier } = product;
   const navigate = useNavigate();
-  console.log(id);
   const navigateToInventoryDetails= (id) => {
     navigate(`/inventory/${id}`);
   };
@@ -24,7 +23,7 @@ const Product = ({ product }) => {
           <small>Supplies: {supplier}</small>
         </p>
         <button
-          onClick={()=>navigateToInventoryDetails(id)}
+          onClick={()=>navigateToInventoryDetails(_id)}
           className="bg-amber-500 px-3 py-2 mt-2 rounded-3xl font-semibold"
         >
           Update
