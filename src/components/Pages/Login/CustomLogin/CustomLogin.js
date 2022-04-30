@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const CustomLogin = () => {
@@ -9,6 +10,10 @@ const CustomLogin = () => {
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   if (error) {
     return (
       <div>
@@ -17,14 +22,10 @@ const CustomLogin = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user?.displayName}</p>
-      </div>
-    );
+    navigate(from, { replace: true });
   }
   return (
     <div className="flex justify-center py-20 m-3">

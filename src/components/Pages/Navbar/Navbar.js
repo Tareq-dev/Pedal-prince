@@ -18,9 +18,9 @@ const Navbar = () => {
             />
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-amber-400" href="http://">
-              First Link
-            </a>
+            <Link className="mr-5 hover:text-amber-400" to="inventory">
+              Inventory
+            </Link>
             <a className="mr-5 hover:text-amber-400" href="http://">
               Second Link
             </a>
