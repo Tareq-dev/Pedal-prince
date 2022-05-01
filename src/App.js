@@ -7,6 +7,8 @@ import Register from "./components/Pages/Login/Register/Register";
 import Navbar from "./components/Pages/Navbar/Navbar";
 import SingleInventory from "./components/Pages/SingleInventory/SingleInventory";
 import RequireAuth from "./components/Pages/RequireAuth/RequireAuth";
+import AddItem from "./components/Pages/AddItem/AddItem";
+import ManageItem from "./components/Pages/ManageItem/ManageItem";
 
 function App() {
   return (
@@ -23,7 +25,16 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route
+          path="/addItem"
+          element={
+            <RequireAuth>
+              <AddItem />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<CustomLogin />}></Route>
+        <Route path="/manage" element={<ManageItem />}></Route>
         <Route path="/register" element={<Register />}></Route>
       </Routes>
       <Footer />

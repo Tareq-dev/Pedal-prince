@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useInventoryDetails from "../../Hooks/useInventoryDetails";
 
 const SingleInventory = () => {
   const { id } = useParams();
   const [product] = useInventoryDetails(id);
+  const [count, setCount] = useState(20);
+  const [quantity, setQuantity] = useState(1);
+  if (count < 1) {
+   setCount(0);
+  }
+  const handleIncreateByInput = () => {
+    const qty = quantity;
+    const addedQty = parseInt(qty) + count;
+    setCount(addedQty);
+  };
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-14 mx-auto">
@@ -30,20 +40,31 @@ const SingleInventory = () => {
                 $ {product.price}
               </span>
               <div className="flex mb-4">
-                <h2 className="text-xl text-sky-600 font-semibold">
-                  Quantity in Stock : {product.qty} Pcs
+                <h2
+                  className="text-xl text-sky-600 font-semibold"
+                  name="number"
+                >
+                  Quantity in Stock : {count} Pcs
                 </h2>
               </div>
               <div className="flex mt-5">
-                <button className="flex text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded">
+                <button
+                  onClick={() => setCount(count - 1)}
+                  className="flex text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
+                >
                   Delivered One
                 </button>
                 <input
+                  onBlur={(event) => setQuantity(event.target.value)}
                   type="text"
+                  name="qty"
                   className="border-2 w-14 text-center mx-3"
                   placeholder="Qty"
                 />
-                <button className="flex mx-3 text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded">
+                <button
+                  onClick={handleIncreateByInput}
+                  className="flex mx-3 text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
+                >
                   Add Qty
                 </button>
               </div>

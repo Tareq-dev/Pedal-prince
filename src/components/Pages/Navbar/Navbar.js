@@ -21,15 +21,41 @@ const Navbar = () => {
             <Link className="mr-5 hover:text-amber-400" to="inventory">
               Inventory
             </Link>
-            <a className="mr-5 hover:text-amber-400" href="http://">
-              Second Link
-            </a>
-            <a className="mr-5 hover:text-amber-400" href="http://">
-              Third Link
-            </a>
-            <a className="mr-5 hover:text-amber-400" href="http://">
-              Fouth Link
-            </a>
+            <Link
+                  className="mr-5 hover:text-amber-400"
+                  as={Link}
+                  to="/addItem"
+                >
+                  Blog
+                </Link>
+            {user ? (
+              <>
+                <Link
+                  className="mr-5 hover:text-amber-400"
+                  as={Link}
+                  to="/addItem"
+                >
+                  Add Item
+                </Link>
+
+                <Link
+                  className="mr-5 hover:text-amber-400"
+                  as={Link}
+                  to="/manage"
+                >
+                  Manage Item
+                </Link>
+                <Link
+                  className="mr-5 hover:text-amber-400"
+                  as={Link}
+                  to="/myItem"
+                >
+                  My Item
+                </Link>
+              </>
+            ) : (
+              ""
+            )}
             {user ? (
               ""
             ) : (
