@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -9,23 +12,30 @@ const AddItem = () => {
 
     //post to backend
 
-     //    const url = `https://pure-chamber-87771.herokuapp.com/service`;
-        fetch("http://localhost:5000/products", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log(result);
-          });
+    //    const url = `https://pure-chamber-87771.herokuapp.com/service`;
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
   };
+ 
   return (
     <div className="flex justify-center py-20 m-3">
       <form onSubmit={handleSubmit(onSubmit)} className="w-3/4">
         <h3 className="text-center text-3xl">Add Item</h3>
+        <input
+          value={user?.email}
+          className="border-2 px-3 py-2 mb-3 mt-2 w-full"
+          {...register("user", { required: true, maxLength: 20 })}
+          readOnly
+        />
         <input
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           {...register("name", { required: true, maxLength: 20 })}
@@ -42,7 +52,7 @@ const AddItem = () => {
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           placeholder="Enter product price"
           type="number"
-            {...register("price")}
+          {...register("price")}
         />
         <br />
         <input

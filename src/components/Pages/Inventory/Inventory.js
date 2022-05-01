@@ -19,7 +19,7 @@ const Inventory = () => {
       </div>
       <div className="grid md:grid-cols-3 grid-cols-1 m-5 p-5 gap-5">
         {products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product._id} product={product} />
         ))}
       </div>
     </div>

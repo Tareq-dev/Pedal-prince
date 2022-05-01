@@ -6,7 +6,6 @@ const ManageItem = () => {
   const [products, setProducts] = useProducts();
 
   const handleDelete = (id) => {
-    console.log(id);
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
       // const url = `https://pure-chamber-87771.herokuapp.com/service/${id}`;
@@ -20,7 +19,6 @@ const ManageItem = () => {
         .then((data) => {
           console.log(data);
           const remaining = products.filter((product) => product._id !== id);
-          console.log(remaining);
           setProducts(remaining);
         });
     }
@@ -31,7 +29,10 @@ const ManageItem = () => {
         Manage Item
       </h2>
       <div className="flex justify-center">
-        <Link className="flex border border-b-4 border-black rounded-lg hover:bg-sky-300 py-1 px-2 mb-10" to="/addItem">
+        <Link
+          className="flex border border-b-4 border-black rounded-lg hover:bg-sky-300 py-1 px-2 mb-10"
+          to="/addItem"
+        >
           <img
             className="w-14"
             src="https://i.ibb.co/2qR7DwV/addicon.png"

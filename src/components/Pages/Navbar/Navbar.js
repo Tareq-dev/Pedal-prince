@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Navbar = () => {
+ //Add product
+
+
+
+
+
   const [user] = useAuthState(auth);
   return (
     <div>
