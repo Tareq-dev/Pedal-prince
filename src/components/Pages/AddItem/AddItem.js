@@ -33,7 +33,7 @@ const AddItem = () => {
         <input
           value={user?.email}
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
-          {...register("user", { required: true, maxLength: 20 })}
+          {...register("email", { required: true, maxLength: 20 })}
           readOnly
         />
         <input

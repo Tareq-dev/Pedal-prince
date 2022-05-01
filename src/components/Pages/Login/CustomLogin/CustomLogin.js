@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -27,9 +28,17 @@ const CustomLogin = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
+  };
+
   return (
     <div className="flex justify-center py-20 m-3">
-      <div>
+      <form onSubmit={handleSubmit}>
         <h2 className="text-center w-full bg-black text-white py-2">
           Please Login
         </h2>
@@ -50,12 +59,7 @@ const CustomLogin = () => {
         />
         <br />
         <div className="flex justify-center">
-          <button
-            className="bg-sky-400 w-full py-2"
-            onClick={() => signInWithEmailAndPassword(email, password)}
-          >
-            Register
-          </button>
+          <button className="bg-sky-400 w-full py-2">Register</button>
         </div>
         <p className="mt-1">Already have an account ?</p>
         <p className="mt-1 text-blue-700 underline">
@@ -65,7 +69,7 @@ const CustomLogin = () => {
           __________ or __________
         </div>
         <SocialLogin />
-      </div>
+      </form>
     </div>
   );
 };

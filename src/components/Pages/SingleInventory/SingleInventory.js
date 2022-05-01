@@ -6,7 +6,7 @@ const SingleInventory = () => {
   const { id } = useParams();
   const [product] = useInventoryDetails(id);
   const [count, setCount] = useState(20);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(product.qty);
   if (count < 1) {
    setCount(0);
   }
