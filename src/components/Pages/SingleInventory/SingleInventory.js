@@ -10,17 +10,19 @@ const SingleInventory = () => {
     fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setStock(data);
+        const quantity = data.qty;
+        setStock(quantity);
       });
   });
 
-  const handleDelivered = (event) => {
-    event.preventDefault();
-    const num = parseInt(stock.qty);
+  const handleDelivered = () => {
+    const num = parseInt(stock);
     const qty = num - 1;
     const updateItem = { qty };
+    console.log(updateItem);
     // sending data for decrease data by One Click
     // const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
+    
     fetch(`http://localhost:5000/products/${id}`, {
       method: "PUT",
       headers: {
@@ -30,17 +32,31 @@ const SingleInventory = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setStock(data)
-        console.log("success", data);
+        console.log(data);
+        setStock(updateItem);
       });
   };
+
   const handleIncreateByInput = (event) => {
     event.preventDefault();
-    const qty = stock.qty;
+    const qty = stock;
     const quantity = event.target.qty.value;
     const AddedQuantity = parseInt(quantity) + qty;
     console.log(AddedQuantity);
-    setStock(AddedQuantity);
+    const updateByInput = { AddedQuantity };
+    fetch(`http://localhost:5000/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateByInput),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setStock(AddedQuantity);
+      });
+    console.log(updateByInput);
   };
   return (
     <section className="text-gray-600 body-font overflow-hidden">
