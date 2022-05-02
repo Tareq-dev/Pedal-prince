@@ -1,19 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useInventoryDetails from "../../Hooks/useInventoryDetails";
 
 const SingleInventory = () => {
   const { id } = useParams();
+  const [stock, setStock] = useState({});
   const [product] = useInventoryDetails(id);
-  const [count, setCount] = useState(20);
-  const [quantity, setQuantity] = useState(product.qty);
-  if (count < 1) {
-   setCount(0);
-  }
-  const handleIncreateByInput = () => {
-    const qty = quantity;
-    const addedQty = parseInt(qty) + count;
-    setCount(addedQty);
+  useEffect(() => {
+    fetch(`http://localhost:5000/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setStock(data);
+      });
+  });
+
+  const handleDelivered = (event) => {
+    event.preventDefault();
+    const num = parseInt(stock.qty);
+    const qty = num - 1;
+    const updateItem = { qty };
+    // sending data for decrease data by One Click
+    // const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
+    fetch(`http://localhost:5000/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setStock(data)
+        console.log("success", data);
+      });
+  };
+  const handleIncreateByInput = (event) => {
+    event.preventDefault();
+    const qty = stock.qty;
+    const quantity = event.target.qty.value;
+    const AddedQuantity = parseInt(quantity) + qty;
+    console.log(AddedQuantity);
+    setStock(AddedQuantity);
   };
   return (
     <section className="text-gray-600 body-font overflow-hidden">
@@ -44,29 +71,30 @@ const SingleInventory = () => {
                   className="text-xl text-sky-600 font-semibold"
                   name="number"
                 >
-                  Quantity in Stock : {count} Pcs
+                  Quantity in Stock : {product.qty} Pcs
                 </h2>
               </div>
               <div className="flex mt-5">
                 <button
-                  onClick={() => setCount(count - 1)}
+                  onClick={handleDelivered}
                   className="flex text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
                 >
                   Delivered One
                 </button>
-                <input
-                  onBlur={(event) => setQuantity(event.target.value)}
-                  type="text"
-                  name="qty"
-                  className="border-2 w-14 text-center mx-3"
-                  placeholder="Qty"
-                />
-                <button
-                  onClick={handleIncreateByInput}
-                  className="flex mx-3 text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
-                >
-                  Add Qty
-                </button>
+                <form onSubmit={handleIncreateByInput}>
+                  <input
+                    onBlur={(event) => setStock(event.target.value)}
+                    type="number"
+                    name="qty"
+                    className="border-2 w-14 text-center mx-3"
+                    placeholder="Qty"
+                  />
+                  <input
+                    className="flex mx-3 text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
+                    type="submit"
+                    value="Add"
+                  />
+                </form>
               </div>
             </div>
             <div className="flex">

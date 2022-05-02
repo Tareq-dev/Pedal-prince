@@ -26,7 +26,7 @@ const ManageItem = () => {
   return (
     <div>
       <h2 className="text-2xl text-center mt-5 mb-5 bg-sky-300 py-3">
-        Manage Item
+        Manage Item : {products.length}
       </h2>
       <div className="flex justify-center">
         <Link
