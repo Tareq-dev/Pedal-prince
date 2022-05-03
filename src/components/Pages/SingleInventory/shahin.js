@@ -4,41 +4,13 @@ import useInventoryDetails from "../../Hooks/useInventoryDetails";
 
 const SingleInventory = () => {
   const { id } = useParams();
+  const [stock, setStock] = useState({});
   const [product] = useInventoryDetails(id);
-  const [stock, setStock] = useState({ qty: "" });
-  useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setStock(data));
-  });
 
-  const number = parseInt(stock.qty);
-  const { qty, ...rest } = stock;
 
-  const handleDelivered = (event) => {
-    event.preventDefault();
-    const newNumber = number - 1;
-    const stock = { qty: newNumber };
-
-    fetch(`http://localhost:5000/products/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(stock),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setStock({ qty: newNumber, ...rest });
-      });
-  };
-
-  // const handleIncreateByInput = (event) => {
-  //   event.preventDefault();
-  //   const qty = stock?.qty;
-  //   console.log(qty);
+  //  event.preventDefault();
+  //   const qty = stock;
   //   const quantity = event.target.qty.value;
-  //   console.log(quantity);
   //   const AddedQuantity = parseInt(quantity) + qty;
   //   console.log(AddedQuantity);
   //   const updateByInput = { AddedQuantity };
@@ -57,6 +29,61 @@ const SingleInventory = () => {
   //   console.log(updateByInput);
   // };
 
+
+
+  
+  useEffect(() => {
+    fetch(`http://localhost:5000/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const quantity = data.qty;
+        setStock(quantity);
+      });
+  });
+
+  const handleDelivered = () => {
+    const num = parseInt(stock);
+    const qty = num - 1;
+    const updateItem = { qty };
+    console.log(updateItem);
+    // sending data for decrease data by One Click
+    // const url = `https://tranquil-escarpment-61810.herokuapp.com/item/${id}`;
+    
+    fetch(`http://localhost:5000/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setStock(updateItem);
+      });
+  };
+
+  const handleIncreateByInput = (event) => {
+    event.preventDefault();
+    const qty = stock;
+    const quantity = event.target.qty.value;
+    const AddedQuantity = parseInt(quantity) + qty;
+    console.log(AddedQuantity);
+    const updateByInput = { AddedQuantity };
+    fetch(`http://localhost:5000/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateByInput),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setStock(AddedQuantity);
+      });
+    console.log(updateByInput);
+  };
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-14 mx-auto">
@@ -86,26 +113,26 @@ const SingleInventory = () => {
                   className="text-xl text-sky-600 font-semibold"
                   name="number"
                 >
-                  Quantity in Stock : {stock.qty} Pcs
+                  Quantity in Stock : {product.qty} Pcs
                 </h2>
               </div>
               <div className="flex mt-5">
                 <button
                   onClick={handleDelivered}
-                  className="flex text-black bg-sky-500 border-0 py-1 px-3 h-8 rounded"
+                  className="flex text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
                 >
                   Delivered One
                 </button>
-                <form>
+                <form onSubmit={handleIncreateByInput}>
                   <input
                     onBlur={(event) => setStock(event.target.value)}
                     type="number"
                     name="qty"
-                    className="border-2 text-center mx-3 h-8 rounded w-12"
+                    className="border-2 w-14 text-center mx-3"
                     placeholder="Qty"
                   />
                   <input
-                    className="flex mx-3 text-black bg-sky-500 border-0 py-1 px-3 h-8 mt-5 focus:outline-none rounded"
+                    className="flex mx-3 text-black bg-sky-500 border-0 py-2 px-6 focus:outline-none rounded"
                     type="submit"
                     value="Add"
                   />
@@ -126,5 +153,11 @@ const SingleInventory = () => {
     </section>
   );
 };
+
+
+
+
+
+
 
 export default SingleInventory;
