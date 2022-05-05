@@ -9,7 +9,7 @@ const MyItem = () => {
   useEffect(() => {
     const getItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/myproducts?email=${email}`;
+      const url = `https://agile-plains-67677.herokuapp.com/myproducts?email=${email}`;
       const { data } = await axios.get(url);
       setItems(data);
     };
@@ -23,7 +23,7 @@ const MyItem = () => {
 
       //Delete from DB
 
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -12,7 +12,7 @@ const ManageItem = () => {
 
       //Delete from DB
 
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -14,7 +14,7 @@ const AddItem = () => {
     //post to backend
 
     //    const url = `https://pure-chamber-87771.herokuapp.com/service`;
-    fetch("http://localhost:5000/products", {
+    fetch("https://agile-plains-67677.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const AddItem = () => {
       .then((result) => {
         console.log(result);
         event.target.reset();
-        toast('Add One Item successfully')
+        toast("Add One Item successfully");
       });
   };
 
