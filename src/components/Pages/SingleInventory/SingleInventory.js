@@ -6,6 +6,8 @@ const SingleInventory = () => {
   const { id } = useParams();
   const [product] = useInventoryDetails(id);
   const [stock, setStock] = useState({ qty: "" });
+  const [inputStock, setInputStock] = useState(0);
+
   useEffect(() => {
     fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
@@ -32,30 +34,23 @@ const SingleInventory = () => {
         setStock({ qty: newNumber, ...rest });
       });
   };
-
-  // const handleIncreateByInput = (event) => {
-  //   event.preventDefault();
-  //   const qty = stock?.qty;
-  //   console.log(qty);
-  //   const quantity = event.target.qty.value;
-  //   console.log(quantity);
-  //   const AddedQuantity = parseInt(quantity) + qty;
-  //   console.log(AddedQuantity);
-  //   const updateByInput = { AddedQuantity };
-  //   fetch(`http://localhost:5000/products/${id}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(updateByInput),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setStock(AddedQuantity);
-  //     });
-  //   console.log(updateByInput);
-  // };
+  const addedQuantityByInput = (event) => {
+    event.preventDefault();
+    const newInput = number + parseInt(inputStock);
+    const stock = { qty: newInput };
+    fetch(`http://localhost:5000/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(stock),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setStock({ qty: newInput, ...rest });
+        event.target.reset();
+      });
+  };
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
@@ -92,22 +87,25 @@ const SingleInventory = () => {
               <div className="flex mt-5">
                 <button
                   onClick={handleDelivered}
-                  className="flex text-black bg-sky-500 border-0 py-1 px-3 h-8 rounded"
+                  className="flex text-white font-bold bg-sky-500 border-0 py-1 px-3 h-8 rounded"
                 >
                   Delivered One
                 </button>
-                <form>
+                <form
+                  className="flex justify-center items-center"
+                  onSubmit={addedQuantityByInput}
+                >
                   <input
-                    onBlur={(event) => setStock(event.target.value)}
+                    onBlur={(event) => setInputStock(event.target.value)}
                     type="number"
                     name="qty"
-                    className="border-2 text-center mx-3 h-8 rounded w-12"
+                    className="border-2 text-center mx-3 h-8 p-2 rounded w-16"
                     placeholder="Qty"
                   />
                   <input
-                    className="flex mx-3 text-black bg-sky-500 border-0 py-1 px-3 h-8 mt-5 focus:outline-none rounded"
+                    className="flex mx-3 text-white font-semibold bg-sky-500 border-0 py-1 px-3 h-8 focus:outline-none rounded"
                     type="submit"
-                    value="Add"
+                    value="Re-Stock"
                   />
                 </form>
               </div>
@@ -126,5 +124,4 @@ const SingleInventory = () => {
     </section>
   );
 };
-
 export default SingleInventory;

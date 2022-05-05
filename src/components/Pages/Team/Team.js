@@ -2,9 +2,9 @@ import React from "react";
 
 const Team = () => {
   return (
-    <div style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}>
+    <div style={{ backgroundColor: "rgba(0, 0, 0, 0)" }} className="py-5">
       <div className="container max-w-7xl mx-auto px-4" style={{ cursor: "auto" }}>
-      <h2 className="font-bold text-4xl text-center mb-10">Our Team</h2>
+      <h1 className="text-center text-3xl mt-8 mb-8">Our Team</h1>
         <div className="flex flex-wrap">
           <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-5 px-4">
             <div className="px-6">

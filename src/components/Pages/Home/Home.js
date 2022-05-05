@@ -1,5 +1,5 @@
 import React from "react";
-import Feature from "../Feature/Feature";
+import BestProducts from "../BestProducts/BestProduct";
 import Header from "../Header/Header";
 import Products from "../Products/Products";
 import Team from "../Team/Team";
@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Header />
       <Products />
-      <Feature />
+      <BestProducts />
       <Team />
     </div>
   );

@@ -43,7 +43,14 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<CustomLogin />}></Route>
-        <Route path="/manage" element={<ManageItem />}></Route>
+        <Route
+          path="/manage"
+          element={
+            <RequireAuth>
+              <ManageItem />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/register" element={<Register />}></Route>
       </Routes>
       <Footer />

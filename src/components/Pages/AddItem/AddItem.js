@@ -1,13 +1,14 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, event) => {
     console.log(data);
 
     //post to backend
@@ -23,9 +24,11 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        event.target.reset();
+        toast('Add One Item successfully')
       });
   };
- 
+
   return (
     <div className="flex justify-center py-20 m-3">
       <form onSubmit={handleSubmit(onSubmit)} className="w-3/4">
