@@ -10,8 +10,8 @@ import "./BestProducts.css";
 
 const BestProduct = () => {
   return (
-    <div className="py-5">
-    <h1 className="text-center text-3xl mt-8 mb-8">Featured Products</h1>
+    <div className="py-8 pb-14 bg-slate-200">
+    <h1 className="text-center text-3xl mt-8 mb-8">Our Featured Products</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -59,7 +59,7 @@ const BestProduct = () => {
          alt="Trek"
        />
        <div>
-       <h1 className="mt-2 text-xl">Phonix BC</h1>
+       <h1 className="text-xl">Phonix BC</h1>
        <p className='text-sky-600'>$ 320</p>
        </div>
          </div>
@@ -67,7 +67,7 @@ const BestProduct = () => {
         <SwiperSlide>
          <div className="p-2">
          <img
-         src="https://qph.fs.quoracdn.net/main-qimg-b81b589ce848df051e139919ca8967d1-lq"
+         src="https://img.freepik.com/free-photo/blue-29er-mountain-bike-isolated-white-background_141856-1280.jpg"
          alt="Trek"
        />
        <div>
@@ -91,11 +91,11 @@ const BestProduct = () => {
         <SwiperSlide>
          <div className="p-2">
          <img
-         src="https://ae01.alicdn.com/kf/Hb77a709ce4264e7dbeb44ec63975ccf94/26er-Full-Carbon-SN04-Fat-Bike-3S-Spoke-Trispoke-Wheels-90mm-Wide-Fat-Bike-Wheel-Clincher.jpg_Q90.jpg_.webp"
+         src="https://thumbs.dreamstime.com/b/blue-modern-mid-drive-motor-e-bike-pedelec-electric-engine-middle-mount-battery-powered-ebike-isolated-white-background-174787481.jpg"
          alt="Trek"
        />
        <div>
-       <h1 className="mt-2 text-xl">Maxxier N50</h1>
+       <h1 className="mt-1 text-xl">Maxxier N50</h1>
        <p className='text-sky-600'>$ 540</p>
        </div>
          </div>
@@ -107,7 +107,7 @@ const BestProduct = () => {
          alt="Trek"
        />
        <div>
-       <h1 className="mt-2 text-xl">Thomson GTs</h1>
+       <h1 className="text-xl">Thomson GTs</h1>
        <p className='text-sky-600'>$ 550</p>
        </div>
          </div>
@@ -119,7 +119,7 @@ const BestProduct = () => {
          alt="Trek"
        />
        <div>
-       <h1 className="mt-2 text-xl">Rare 71</h1>
+       <h1 className="text-xl">Rare 71</h1>
        <p className='text-sky-600'>$ 478</p>
        </div>
          </div>

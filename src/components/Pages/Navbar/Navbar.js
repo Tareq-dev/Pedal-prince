@@ -5,12 +5,6 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Navbar = () => {
- //Add product
-
-
-
-
-
   const [user] = useAuthState(auth);
   return (
     <div>
@@ -30,7 +24,7 @@ const Navbar = () => {
             <Link
                   className="mr-5 hover:text-amber-400"
                   as={Link}
-                  to="/addItem"
+                  to="/blog"
                 >
                   Blog
                 </Link>

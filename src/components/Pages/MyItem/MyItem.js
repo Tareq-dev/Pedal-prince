@@ -23,7 +23,7 @@ const MyItem = () => {
 
       //Delete from DB
 
-      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
+      fetch(`https://agile-plains-67677.herokuapp.com//products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

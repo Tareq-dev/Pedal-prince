@@ -8,7 +8,6 @@ const ManageItem = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      // const url = `https://pure-chamber-87771.herokuapp.com/service/${id}`;
 
       //Delete from DB
 
