@@ -1,7 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import auth from "./../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+import { Navigate } from "react-router-dom";
+import axiosSecret from "../../../API/axiosSecret";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
@@ -10,8 +12,19 @@ const MyItem = () => {
     const getItems = async () => {
       const email = user?.email;
       const url = `https://agile-plains-67677.herokuapp.com/myproducts?email=${email}`;
-      const { data } = await axios.get(url);
-      setItems(data);
+      try {
+        const { data } = await axiosSecret.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        });
+        setItems(data);
+      } catch (error) {
+        if (error.response.status === 401 || error.response.status === 403) {
+          signOut(auth);
+          Navigate("/login");
+        }
+      }
     };
     getItems();
   }, [user?.email]);
@@ -19,11 +32,9 @@ const MyItem = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      // const url = `https://pure-chamber-87771.herokuapp.com/service/${id}`;
-
       //Delete from DB
 
-      fetch(`https://agile-plains-67677.herokuapp.com//products/${id}`, {
+      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

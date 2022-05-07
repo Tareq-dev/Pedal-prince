@@ -22,7 +22,7 @@ const SingleInventory = () => {
     const newNumber = number - 1;
     const stock = { qty: newNumber };
 
-    fetch(`https://agile-plains-67677.herokuapp.com//products/${id}`, {
+    fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -38,7 +38,7 @@ const SingleInventory = () => {
     event.preventDefault();
     const newInput = number + parseInt(inputStock);
     const stock = { qty: newInput };
-    fetch(`https://agile-plains-67677.herokuapp.com//products/${id}`, {
+    fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -85,12 +85,18 @@ const SingleInventory = () => {
                 </h2>
               </div>
               <div className="flex mt-5">
-                <button
-                  onClick={handleDelivered}
-                  className="flex text-white font-bold bg-sky-500 border-0 py-1 px-3 h-8 rounded"
-                >
-                  Delivered One
-                </button>
+                {stock.qty === 0 ? (
+                  <button className="flex text-white font-bold bg-red-500 border-0 py-1 px-3 h-8 rounded">
+                    Sold out
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleDelivered}
+                    className="flex text-white font-bold bg-sky-500 border-0 py-1 px-3 h-8 rounded"
+                  >
+                    Delivered One
+                  </button>
+                )}
                 <form
                   className="flex justify-center items-center"
                   onSubmit={addedQuantityByInput}
@@ -99,6 +105,7 @@ const SingleInventory = () => {
                     onBlur={(event) => setInputStock(event.target.value)}
                     type="number"
                     name="qty"
+                    min="0"
                     className="border-2 text-center mx-3 h-8 p-2 rounded w-16"
                     placeholder="Qty"
                   />

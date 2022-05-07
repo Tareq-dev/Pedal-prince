@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useToken from "../../../Hooks/useToken";
 import Loading from "../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -13,20 +14,14 @@ const CustomLogin = () => {
     useSignInWithEmailAndPassword(auth);
   const location = useLocation();
   const navigate = useNavigate();
+  const [token] = useToken(user);
   const from = location.state?.from?.pathname || "/";
 
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
   if (loading) {
     return <Loading />;
   }
-  if (user) {
-    navigate(from, { replace: true });
+  if (token) {
+     navigate(from, { replace: true });
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +31,7 @@ const CustomLogin = () => {
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+     navigate(from, { replace: true });
   };
 
   return (
@@ -61,15 +56,17 @@ const CustomLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
+        <p className="mx-2 mb-2 text-red-500">{error ? error.message : ""}</p>
         <div className="flex justify-center">
-          <button className="bg-sky-400 w-full py-2">Register</button>
+          <button className="bg-sky-400 w-full py-2">Login</button>
         </div>
-        <p className="mt-1">Already have an account ?</p>
+        <p className="mt-1">Don't have an account ?</p>
         <p className="mt-1 text-blue-700 underline">
-          <Link to="/login">Sign In .</Link>{" "}
+          <Link to="/register">Please Register .</Link>
         </p>
         <div className="text-center text-gray-400 mb-4">
           __________ or __________
+          <p>Continue with </p>
         </div>
         <SocialLogin />
       </form>

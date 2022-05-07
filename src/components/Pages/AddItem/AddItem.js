@@ -13,7 +13,6 @@ const AddItem = () => {
 
     //post to backend
 
-    //    const url = `https://pure-chamber-87771.herokuapp.com/service`;
     fetch("https://agile-plains-67677.herokuapp.com/products", {
       method: "POST",
       headers: {

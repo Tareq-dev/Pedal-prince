@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useToken from "../../../Hooks/useToken";
+import Loading from "../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -9,23 +11,14 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [token] = useToken(user);
+  const navigate = useNavigate();
 
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.email}</p>
-      </div>
-    );
+    navigate("/");
   }
   return (
     <div className="flex justify-center py-20 m-3">
@@ -57,6 +50,7 @@ const Register = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <br />
+        <p>{error ? error.message : ""}</p>
         <div className="flex justify-center">
           <button
             className="bg-sky-400 w-full py-2"
@@ -68,12 +62,15 @@ const Register = () => {
           </button>
         </div>
         <p className="mt-1">Already have an account ?</p>
-        <p className="mt-1 text-blue-700 underline"><Link to='/login'>Sign In .</Link> </p>
+        <p className="mt-1 text-blue-700 underline">
+          <Link to="/login">Sign In .</Link>{" "}
+        </p>
         <div className="text-center text-gray-400 mb-4">
-        __________ or __________
-      </div>
-        <SocialLogin />
+          __________ or __________
+          <p>Continue with</p>
         </div>
+        <SocialLogin />
+      </div>
     </div>
   );
 };
