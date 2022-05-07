@@ -6,7 +6,11 @@ const Footer = () => {
       <footer className="text-white body-font bg-black mt-5">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a href="/">
-            <img className="w-64" src="https://i.ibb.co/417bkjk/logo-text.png" alt="" />
+            <img
+              className="w-64"
+              src="https://i.ibb.co/417bkjk/logo-text.png"
+              alt=""
+            />
           </a>
           <p className="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
             © 2022 pedal prince —

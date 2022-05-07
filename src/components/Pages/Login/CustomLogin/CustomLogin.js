@@ -21,7 +21,7 @@ const CustomLogin = () => {
     return <Loading />;
   }
   if (token) {
-     navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,7 +31,7 @@ const CustomLogin = () => {
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);
-     navigate(from, { replace: true });
+    navigate(from, { replace: true });
   };
 
   return (
@@ -60,6 +60,9 @@ const CustomLogin = () => {
         <div className="flex justify-center">
           <button className="bg-sky-400 w-full py-2">Login</button>
         </div>
+        <p className="flex justify-end mt-2 text-gray-400 text-sm">
+          <Link to="/reset">forgot password?</Link>
+        </p>
         <p className="mt-1">Don't have an account ?</p>
         <p className="mt-1 text-blue-700 underline">
           <Link to="/register">Please Register .</Link>

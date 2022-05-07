@@ -23,10 +23,15 @@ const Navbar = () => {
             </Link>
             <Link
                   className="mr-5 hover:text-amber-400"
-                  as={Link}
                   to="/blog"
                 >
                   Blog
+                </Link>
+                <Link
+                  className="mr-5 hover:text-amber-400"
+                  to="/factory"
+                >
+                  Factory
                 </Link>
             {user ? (
               <>

@@ -12,6 +12,10 @@ import ManageItem from "./components/Pages/ManageItem/ManageItem";
 import MyItem from "./components/Pages/MyItem/MyItem";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import Blogs from "./components/Pages/Blogs/Blogs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ResetPass from "./components/Pages/Login/ResetPass/ResetPass";
+import FactoryGallery from "./components/Pages/FactoryGallery/FactoryGallery";
 
 function App() {
   return (
@@ -55,8 +59,11 @@ function App() {
         ></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/blog" element={<Blogs />}></Route>
+        <Route path="/reset" element={<ResetPass />}></Route>
+        <Route path="/factory" element={<FactoryGallery />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );
