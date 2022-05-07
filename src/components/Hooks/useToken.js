@@ -11,8 +11,8 @@ const useToken = (user) => {
                "https://agile-plains-67677.herokuapp.com/login",
                { email }
              );
-             setToken(data);
-             localStorage.setItem("accessToken", data);
+             setToken(data.accessToken);
+             localStorage.setItem("accessToken", data.accessToken);
       }
     };
     getToken();

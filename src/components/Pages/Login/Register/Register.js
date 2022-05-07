@@ -17,7 +17,7 @@ const Register = () => {
   if (loading) {
     return <Loading />;
   }
-  if (user) {
+  if (token) {
     navigate("/");
   }
   return (

@@ -12,9 +12,9 @@ const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fbuser, fbloading, fberror] =
     useSignInWithFacebook(auth);
+    const [token] = useToken(user || fbuser);
   const navigate = useNavigate();
   const location = useLocation();
-  const token = useToken(user || fbuser);
 
   let from = location.state?.from?.pathname || "/";
 
@@ -23,7 +23,7 @@ const SocialLogin = () => {
   }
   
   if (token) {
-  //  navigate(from, { replace: true });
+   navigate(from, { replace: true });
   }
 
   return (
