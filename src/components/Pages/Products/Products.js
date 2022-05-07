@@ -16,7 +16,7 @@ const Products = () => {
       </div>
       <div className="flex justify-center">
         <button
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/inventory")}
           className="border border-black px-3 py-2 rounded-lg hover:bg-black hover:text-white font-semibold duration-1000"
         >
           See more products
