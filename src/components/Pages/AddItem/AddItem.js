@@ -1,24 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
-  const { register, handleSubmit } = useForm();
+  const [name, setName] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [price, setPrice] = useState([]);
+  const [qty, setQty] = useState([]);
+  const [supplier, setSupplier] = useState([]);
+  const [img, setImg] = useState([]);
 
-  const onSubmit = (data, event) => {
-    console.log(data);
-
-    //post to backend
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const item = {
+      email: user.email,
+      name,
+      img,
+      description,
+      price,
+      qty,
+      supplier,
+    };
+    console.log(item);
+    //  post to backend
 
     fetch("https://agile-plains-67677.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(item),
     })
       .then((res) => res.json())
       .then((result) => {
@@ -30,23 +43,22 @@ const AddItem = () => {
 
   return (
     <div className="flex justify-center py-20 m-3">
-      <form onSubmit={handleSubmit(onSubmit)} className="w-3/4">
+      <form onSubmit={handleSubmit} className="w-3/4">
         <h3 className="text-center text-3xl">Add Item</h3>
         <input
-          value={user?.email}
+          value={user.email}
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
-          {...register("email", { required: true, maxLength: 20 })}
           readOnly
         />
         <input
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
-          {...register("name", { required: true, maxLength: 20 })}
+          onBlur={(e) => setName(e.target.value)}
           placeholder="Enter Product Name"
         />
         <br />
         <textarea
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
-          {...register("description")}
+          onBlur={(e) => setDescription(e.target.value)}
           placeholder="Enter product description"
         />
         <br />
@@ -54,32 +66,36 @@ const AddItem = () => {
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           placeholder="Enter product price"
           type="number"
-          {...register("price")}
+          onBlur={(e) => setPrice(e.target.value)}
         />
         <br />
         <input
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           type="number"
-          {...register("qty")}
+          onBlur={(e) => setQty(e.target.value)}
           placeholder="Enter product quantity"
         />
         <br />
         <input
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           type="text"
-          {...register("supplier")}
+          onBlur={(e) => setSupplier(e.target.value)}
           placeholder="Supplier name"
         />
         <br />
         <input
           className="border-2 px-3 py-2 mb-3 mt-2 w-full"
           type="text"
-          {...register("img")}
+          onBlur={(e) => setImg(e.target.value)}
           placeholder="Enter photoURL"
         />
         <br />
         <div className="flex justify-center">
-          <button className="bg-sky-400 w-full py-2">Add Item</button>
+          <input
+            type="submit"
+            className="bg-sky-400 w-full py-2"
+            value="Add Item"
+          />
         </div>
       </form>
     </div>

@@ -37,3 +37,9 @@
   margin-top:15px;
   backdrop-filter: blur(20px);
 }
+@media screen and (max-width:475px){
+  .swiper-para{
+    width: 75%;
+    font-size:14px;
+  }
+}

@@ -11,7 +11,6 @@ import AddItem from "./components/Pages/AddItem/AddItem";
 import ManageItem from "./components/Pages/ManageItem/ManageItem";
 import MyItem from "./components/Pages/MyItem/MyItem";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import { ToastContainer } from "react-toastify";
 import Blogs from "./components/Pages/Blogs/Blogs";
 
 function App() {
@@ -58,7 +57,6 @@ function App() {
         <Route path="/blog" element={<Blogs />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <ToastContainer />
       <Footer />
     </div>
   );

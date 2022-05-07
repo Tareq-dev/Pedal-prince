@@ -35,7 +35,7 @@ const Team = () => {
             <div className="px-6" style={{ cursor: "auto" }}>
               <img
                 alt="Jack Wales"
-                src="https://i.ibb.co/jTJvwCK/trk1.png"
+                src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 className="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
                 style={{ cursor: "auto" }}
               />
@@ -61,7 +61,7 @@ const Team = () => {
             <div className="px-6" style={{ cursor: "auto" }}>
               <img
                 alt="George Hoyt"
-                src="https://i.ibb.co/jTJvwCK/trk1.png"
+                src="https://images.pexels.com/photos/718261/pexels-photo-718261.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 className="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
                 style={{ cursor: "auto" }}
               />
@@ -84,7 +84,7 @@ const Team = () => {
             <div className="px-6">
               <img
                 alt="Jenna Kardi"
-                src="https://i.ibb.co/jTJvwCK/trk1.png"
+                src="https://i.ibb.co/k61KcFK/photo-1506794778202-cad84cf45f1d.jpg"
                 className="rounded-xl shadow-lg max-w-full h-auto align-middle border-none undefined"
               />
               <div className="pt-6 text-center">

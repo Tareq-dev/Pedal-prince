@@ -22,16 +22,13 @@ const Header = () => {
           src="https://cdn.shopify.com/s/files/1/0052/2783/9586/files/terro_palm_WEB_700x.jpg?v=1630547958"
           alt=""
         />
-        <div className="absolute bottom-20 left-0 h-100 w-100">
-          <h1 className="text-7xl font-serif font-extrabold text-white">
-            Hello world!
+        <div className="absolute bottom-20 h-100 w-100">
+          <h1 className="md:text-5xl font-serif font-extrabold text-white">
+            LET US HELP YOU PICK
           </h1>
           <div className="flex justify-center">
             <p className="text-white swiper-para">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
-              veniam beatae unde officia pariatur animi rem tempore suscipit
-              laboriosam, cupiditate ullam! Blanditiis deserunt voluptate
-              perspiciatis?
+              Our cycle guide can help you narrow your search.
             </p>
           </div>
         </div>
@@ -42,16 +39,13 @@ const Header = () => {
           src="https://cdn.shopify.com/s/files/1/0052/2783/9586/files/chromag-2022-apparel-slider_1200x.jpg?v=1650556932"
           alt=""
         />
-        <div className="absolute bottom-20 left-0 h-100 w-100">
-          <h1 className="text-7xl font-serif font-extrabold text-white">
-            Hello world!
+        <div className="absolute bottom-20 h-100 w-100">
+          <h1 className="md:text-5xl font-serif font-extrabold text-white">
+            Welcome to Ride!
           </h1>
           <div className="flex justify-center">
             <p className="text-white swiper-para">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
-              veniam beatae unde officia pariatur animi rem tempore suscipit
-              laboriosam, cupiditate ullam! Blanditiis deserunt voluptate
-              perspiciatis?
+            Cycling is one of the best exercises. You can cycle across scenic landscapes, enjoy the sceneries, and also become fit.
             </p>
           </div>
         </div>
@@ -63,16 +57,13 @@ const Header = () => {
           src="https://cdn.shopify.com/s/files/1/0052/2783/9586/files/chromag-rift-pinkbike-slider_1200x.jpg?v=1646255260"
           alt=""
         />
-        <div className="absolute bottom-20 left-0 h-100 w-100">
-          <h1 className="text-7xl font-serif font-extrabold text-white">
-            Hello world!
+        <div className="absolute bottom-20  h-100 w-100">
+          <h1 className="md:text-5xl font-serif font-extrabold text-white">
+            Cycling vs Benefits!
           </h1>
           <div className="flex justify-center">
             <p className="text-white swiper-para">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
-              veniam beatae unde officia pariatur animi rem tempore suscipit
-              laboriosam, cupiditate ullam! Blanditiis deserunt voluptate
-              perspiciatis?
+            when you choose cycling over other workouts to stay healthy, you also give yourself various other benefits. 
             </p>
           </div>
         </div>

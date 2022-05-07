@@ -8,7 +8,7 @@ const Products = () => {
 
   return (
     <div className="py-10 bg-slate-100">
-      <h1 className="text-center font-bold text-3xl">Our Products</h1>
+      <h1 className="text-center text-3xl">Our Products</h1>
       <div className="grid md:grid-cols-3 grid-cols-1 m-5 p-5 gap-5">
         {products.slice(0, 6).map((product) => (
           <Product key={product._id} product={product} />
