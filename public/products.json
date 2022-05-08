@@ -1,89 +1,89 @@
 [
      {
       "email":"tareque179@gmail.com",
-      "name": "Harrison Moore",
+      "name": "Duranta Bicycle",
        "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
+       "description": "Duranta Bicycle is trusted bike manufactured by Rangpur Metal Industries Limited, a sister concern of RFL Group. It’s main factory is in Hobigong and they export globally because they use world standard high technology.",
+       "price": 350,
        "qty": 28,
-       "supplier": "Velocy"
+       "supplier": "Duranta"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Bass Taylor",
+      "name": "Phoenix Bicycle",
        "img": "https://i.ibb.co/QcdzybQ/bicycle-2.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
+       "description": "Phoenix is a China-based 28″ bicycle and this recreational bikes are leisurely, healthy and modern. It is a classic bicycle in the modern age. They always focuses on bicycles and relevant industries for the last few decades and advocate green cycling for healthy and trendy high-quality lifestyle",
+       "price": 378,
        "qty": 78,
-       "supplier": "Velocy"
+       "supplier": "Phoenix"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Jenkins Gilbert",
+      "name": "Veloce Legion 50",
        "img": "https://i.ibb.co/pJZsGyG/bicycle-3.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
+       "description": "Veloce is not only popular in Bangladesh but also popular in Europe. Currently, they are producing more than 600,000 bikes per year and the production is increasing day by day.",
+       "price": 310,
        "qty": 10,
        "supplier": "Velocy"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Briggs Page",
+      "name": "Avon 360",
        "img": "https://i.ibb.co/bgd7M8w/bicycle-4.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 270,
-       "supplier": "Velocy"
+       "description": "Avon, Punjabi spirit started their business from 1947, is an Indian bicycle company. It is family owned business and very well-reputed bicycle company with innovation and automation.",
+       "price": 380,
+       "qty": 27,
+       "supplier": "Avon"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Andrews Downs",
+      "name": "YAMA 21 SPEED",
        "img": "https://i.ibb.co/pnRqfV9/bycycle-5.webp",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
+       "description": "They used high-class technology, consistent quality and effective after-sales service and has a vast network of dealers in India and abroad. Mr Onkar Singh Pahwa is the leading person to make success of this bicyle company.",
        "price": 300,
        "qty": 70,
-       "supplier": "Velocy"
+       "supplier": "YAMA"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Suzanne Moon",
+      "name": "FOXTER DRACO 1500",
        "img": "https://i.ibb.co/z20ztCB/bycycle-6.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
+       "description": "Foxter, Gainway Bicycles Shop started their business from 16th July 2010, is a Malaysian bicycle company. It is very well-reputed bicycle company with high quality, affordable and suitable.",
+       "price": 290,
        "qty": 29,
-       "supplier": "Velocy"
+       "supplier": "FOXTER"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Mcneil Merritt",
+      "name": "Giant SCR 1",
        "img": "https://i.ibb.co/r32BH6K/bycycle-7.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
+       "description": "Giant Bicycle is a Taiwanese bicycle manufacturer and it is recognized the world’s largest bicycle manufacturer. They have exported their products all over the world including Netherlands and Hungary.",
        "price": 300,
        "qty": 48,
-       "supplier": "Velocy"
+       "supplier": "Giant"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Mathis England",
+      "name": "Hero 20″ Steel Body",
        "img": "https://i.ibb.co/Jxpqgc7/bycycle-8.jpg",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
+       "description": "Hero Bicycle is very famous Indian based manufactures bicycles incorporated in 1956. Pankaj M Munjal is the leading person and chairman of this company. It is spread all over the world .",
        "price": 300,
        "qty": 25,
-       "supplier": "Velocy"
+       "supplier": "Hero"
      }
      ,
      {
       "email":"tareque179@gmail.com",
-      "name": "Mathis England",
+      "name": "GIRO ER C ROAD BIKE",
        "img": "https://i.ibb.co/CvWDjn9/bycycle-9.jpg",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
+       "description": "The Giro ER-C offers new levels of versatility for a road bike. The light weight CR-4 carbon frame and fork are equipped with Shimano 105 hydraulic brakes, a Shimano Ultegra rear derailleur and feature 30mm wide.",
        "price": 300,
        "qty": 72,
-       "supplier": "Velocy"
+       "supplier": "GIRO"
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Mathis England",
+      "name": "Veloce Legion 40 ",
        "img": "https://i.ibb.co/g3fDKpJ/bycycle-10.png",
        "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
        "price": 300,
@@ -92,102 +92,11 @@
      },
      {
       "email":"tareque179@gmail.com",
-      "name": "Mathis England",
+      "name": "GIRO F3 ROAD",
        "img": "https://i.ibb.co/ZWrgGTq/bycycle-11.jpg",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
+       "description": "The Giro F3 blends an upright ride position with the light weight and speed of a road bike and wraps it all up with full cover fenders and a rear rack for the ultimate in versatility. Perfect for commuting.",
        "price": 300,
        "qty":96,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 47,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 47,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 27,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 78,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 84,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 87,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 14,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty":45,
-       "supplier": "Velocy"
-     }
-     ,
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 32,
-       "supplier": "Velocy"
-     },
-     {
-      "email":"tareque179@gmail.com",
-      "name": "Mathis England",
-       "img": "https://i.ibb.co/C8JtD0Z/bicycle-1.png",
-       "description": "Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit Lorem ipsum dolor sit amet consectetur       adipisicing elit",
-       "price": 300,
-       "qty": 48,
        "supplier": "Velocy"
      }
    ]

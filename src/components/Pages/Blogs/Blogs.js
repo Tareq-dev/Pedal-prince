@@ -49,27 +49,7 @@ const Blogs = () => {
           03. What is the purpose of using jwt token and how it works ?
         </h1>
         <p className="text-justify">
-          SQL databases are a sort of database management system that allows you
-          to manage, analyze, capture, and query structured data in a relational
-          manner. NoSQL databases are a form of software that allows you to
-          retain data without using SQL. for multiple types of organized,
-          unstructured, and polymorphic data purposes. A language for
-          communicating with databases for storage purposes. Data deletion,
-          updating, insertion, and retrieval a program for Database scalability
-          may be retrieved, stored, and managed. SQL was created. around 1970 to
-          solve flat file storage issues NoSQL was created in 1999. 2000 as an
-          improved version of SQL databases for unstructured and structured
-          data. resources by adding more). the present gear and software's
-          capabilities). Horizontally (To increase the number of nodes, replace
-          tiny ones with larger ones.) the present hardware's capabilities.
-        </p>
-      </div>
-      <div>
-        <h1 className="text-2xl mt-5 mb-3">
-          04. What is the difference between sql and nosql?
-        </h1>
-        <p className="text-justify">
-          JWT (JSON Web Token) is an open standard for securely exchanging data
+        JWT (JSON Web Token) is an open standard for securely exchanging data
           between two parties - a client and a server. It's usually an encoded
           JSON file with a collection of claims and a signature. It's typically
           used in conjunction with other authentication protocols such as OAuth
@@ -84,6 +64,26 @@ const Blogs = () => {
           Identity Provider and compare it to the token's signature If the
           result matches the signature, the SP knows that the information was
           supplied by the other entity who possesses the key.
+        </p>
+      </div>
+      <div>
+        <h1 className="text-2xl mt-5 mb-3">
+          04. What is the difference between sql and nosql?
+        </h1>
+        <p className="text-justify">
+        SQL databases are a sort of database management system that allows you
+        to manage, analyze, capture, and query structured data in a relational
+        manner. NoSQL databases are a form of software that allows you to
+        retain data without using SQL. for multiple types of organized,
+        unstructured, and polymorphic data purposes. A language for
+        communicating with databases for storage purposes. Data deletion,
+        updating, insertion, and retrieval a program for Database scalability
+        may be retrieved, stored, and managed. SQL was created. around 1970 to
+        solve flat file storage issues NoSQL was created in 1999. 2000 as an
+        improved version of SQL databases for unstructured and structured
+        data. resources by adding more). the present gear and software's
+        capabilities). Horizontally (To increase the number of nodes, replace
+        tiny ones with larger ones.) the present hardware's capabilities.
         </p>
       </div>
     </div>

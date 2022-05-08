@@ -21,18 +21,12 @@ const Navbar = () => {
             <Link className="mr-5 hover:text-amber-400" to="inventory">
               Inventory
             </Link>
-            <Link
-                  className="mr-5 hover:text-amber-400"
-                  to="/blog"
-                >
-                  Blog
-                </Link>
-                <Link
-                  className="mr-5 hover:text-amber-400"
-                  to="/factory"
-                >
-                  Factory
-                </Link>
+            <Link className="mr-5 hover:text-amber-400" to="/blog">
+              Blog
+            </Link>
+            <Link className="mr-5 hover:text-amber-400" to="/factory">
+              Factory
+            </Link>
             {user ? (
               <>
                 <Link
@@ -57,6 +51,13 @@ const Navbar = () => {
                 >
                   My Item
                 </Link>
+                <Link
+                  className="mr-5 hover:text-amber-400"
+                  as={Link}
+                  to="/statistic"
+                >
+                  Statistic
+                </Link>
               </>
             ) : (
               ""
@@ -66,7 +67,6 @@ const Navbar = () => {
             ) : (
               <Link
                 className="mr-5 hover:text-amber-400"
-                as={Link}
                 to="/register"
               >
                 Register

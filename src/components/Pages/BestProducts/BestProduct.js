@@ -11,7 +11,7 @@ import "./BestProducts.css";
 const BestProduct = () => {
   return (
     <div className="py-8 pb-14 bg-slate-200">
-    <h1 className="text-center text-3xl mt-3 mb-8">Our Featured Products</h1>
+    <h1 className="text-center text-3xl mt-3 mb-8">Our Best selling products</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

@@ -16,6 +16,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ResetPass from "./components/Pages/Login/ResetPass/ResetPass";
 import FactoryGallery from "./components/Pages/FactoryGallery/FactoryGallery";
+import Statistic from "./components/Pages/Statistic/Statistic";
 
 function App() {
   return (
@@ -54,6 +55,14 @@ function App() {
           element={
             <RequireAuth>
               <ManageItem />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/statistic"
+          element={
+            <RequireAuth>
+              <Statistic />
             </RequireAuth>
           }
         ></Route>

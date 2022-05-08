@@ -15,7 +15,7 @@ const Product = ({ product }) => {
       <div className="bg-sky-200 hover:bg-sky-300 transition ease-out delay-150 duration-300 p-5 mt-1 rounded-lg">
         <h2 className="font-bold text-xl">{name}</h2>
         <p>
-          <small>{description.slice(0, 50)}</small>
+          <small>{description.slice(0, 100) + ". . . ."}</small>
         </p>
         <h2 className="font-bold">$ {price}</h2>
         <h6> Quantity : {qty}</h6>
