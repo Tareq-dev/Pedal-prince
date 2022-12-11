@@ -27,7 +27,7 @@ const CustomLogin = () => {
     event.preventDefault();
     await signInWithEmailAndPassword(email, password);
     const { data } = await axios.post(
-      "https://agile-plains-67677.herokuapp.com/login",
+      "https://pedal-prince.onrender.com/login",
       { email }
     );
     localStorage.setItem("accessToken", data.accessToken);

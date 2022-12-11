@@ -11,7 +11,7 @@ const MyItem = () => {
   useEffect(() => {
     const getItems = async () => {
       const email = user?.email;
-      const url = `https://agile-plains-67677.herokuapp.com/myproducts?email=${email}`;
+      const url = `https://pedal-prince.onrender.com/myproducts?email=${email}`;
       try {
         const { data } = await axiosSecret.get(url, {
           headers: {
@@ -34,7 +34,7 @@ const MyItem = () => {
     if (proceed) {
       //Delete from DB
 
-      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
+      fetch(`https://pedal-prince.onrender.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -46,9 +46,9 @@ const MyItem = () => {
     }
   };
   return (
-    <div className="py-14">
-      <h2 className="text-3xl mb-2 text-center">
-        {user.email} Added : {items.length}
+    <div className="py-14 px-4">
+      <h2 className="md:text-3xl mb-2 text-center">
+        {user.email} Added : {items.length} {items.length === 1 ? "item" : "items"}
       </h2>
       <hr />
       {items.map((item) => (

@@ -6,13 +6,13 @@ const useToken = (user) => {
   useEffect(() => {
     const getToken = async () => {
       const email = user?.user?.email;
-      if(email){
-          const { data } = await axios.post(
-               "https://agile-plains-67677.herokuapp.com/login",
-               { email }
-             );
-             setToken(data.accessToken);
-             localStorage.setItem("accessToken", data.accessToken);
+      if (email) {
+        const { data } = await axios.post(
+          "https://pedal-prince.onrender.com/login",
+          { email }
+        );
+        setToken(data.accessToken);
+        localStorage.setItem("accessToken", data.accessToken);
       }
     };
     getToken();

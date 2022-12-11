@@ -17,7 +17,7 @@ const Inventory = () => {
           Search
         </button>
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-1 m-5 p-5 gap-5">
+      <div className="grid md:grid-cols-3 grid-cols-1 m-3 md:m-5 md:p-5 gap-5">
         {products.map((product) => (
           <Product key={product._id} product={product} />
         ))}

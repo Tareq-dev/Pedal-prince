@@ -12,7 +12,7 @@ const Product = ({ product }) => {
       <div className="flex justify-center">
         <img className="w-4/5 me-6 h-48 p-2" src={img} alt="" />
       </div>
-      <div className="bg-sky-200 hover:bg-sky-300 transition ease-out delay-150 duration-300 p-5 mt-1 rounded-lg">
+      <div className="bg-sky-200 h-[260px] hover:bg-sky-300 transition ease-out delay-150 duration-300 p-5 mt-1 rounded-lg">
         <h2 className="font-bold text-xl">{name}</h2>
         <p>
           <small>{description.slice(0, 100) + ". . . ."}</small>

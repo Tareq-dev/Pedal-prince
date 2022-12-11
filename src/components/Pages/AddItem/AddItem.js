@@ -26,7 +26,7 @@ const AddItem = () => {
     console.log(item);
     //  post to backend
 
-    fetch("https://agile-plains-67677.herokuapp.com/products", {
+    fetch("https://pedal-prince.onrender.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,7 +11,7 @@ const ManageItem = () => {
 
       //Delete from DB
 
-      fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
+      fetch(`https://pedal-prince.onrender.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

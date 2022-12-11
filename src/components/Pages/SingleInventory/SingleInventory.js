@@ -9,7 +9,7 @@ const SingleInventory = () => {
   const [inputStock, setInputStock] = useState(0);
 
   useEffect(() => {
-    fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`)
+    fetch(`https://pedal-prince.onrender.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setStock(data));
   });
@@ -22,7 +22,7 @@ const SingleInventory = () => {
     const newNumber = number - 1;
     const stock = { qty: newNumber };
 
-    fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
+    fetch(`https://pedal-prince.onrender.com/products/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -38,7 +38,7 @@ const SingleInventory = () => {
     event.preventDefault();
     const newInput = number + parseInt(inputStock);
     const stock = { qty: newInput };
-    fetch(`https://agile-plains-67677.herokuapp.com/products/${id}`, {
+    fetch(`https://pedal-prince.onrender.com/products/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
